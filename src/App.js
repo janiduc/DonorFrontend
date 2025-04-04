@@ -3,6 +3,9 @@ import Signup from "./pages/auth/signup/Signup";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Header from "./pages/header/Header";
 import {Routes, Route } from "react-router-dom";
+
+import ChildManagement from "./pages/childManagement/ChildManagement";
+
 import './App.css';
 
 function App() {
@@ -15,6 +18,7 @@ function App() {
       <Route path="/login" element={<Login></Login>}></Route>
       <Route path="/register" element={<Signup></Signup>}></Route>
       <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+      <Route path="/childManagement" element={<ChildManagement />} />
     </Routes>
     </>
   );

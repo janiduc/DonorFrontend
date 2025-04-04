@@ -1,29 +1,55 @@
+/* Top Horizontal Navbar */
 .navbar {
     background-color: #343a40;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays above other elements */
+    height: 50px; /* Reduced height */
+    padding: 0 15px; /* Adjust padding for better alignment */
+    display: flex;
+    align-items: center; /* Vertically center the content */
 }
 
 .navbar .navbar-brand {
     color: #fff;
+    font-size: 1.2rem; /* Adjust font size for better fit */
+    line-height: 50px; /* Match the navbar height */
 }
 
 .navbar .nav-link {
     color: #fff !important;
     text-decoration: none !important;
     margin-right: 20px;
+    line-height: 50px; /* Match the navbar height */
 }
 
 @media (max-width: 768px) {
     .navbar .nav-link {
         margin-right: 0;
     }
-    
 }
 
+/* Main container for horizontal and vertical navbars */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px; /* Adjust margin to match the reduced navbar height */
+    height: 50px; /* Adjust height to account for the reduced top navbar */
+}
+
+/* Vertical Navbar Styling */
 .vertical-navbar {
-    width: 200px;
+    width: 200px; /* Fixed width for the vertical navbar */
     background-color: #343a40;
     padding: 20px;
     color: #fff;
+    height: 100%; /* Full height */
+    position: fixed; /* Fix the vertical navbar on the left */
+    top: 50px; /* Position it below the reduced top navbar */
+    left: 0;
+    z-index: 999; /* Ensure it stays above the content area */
 }
 
 .vertical-navbar .nav-link {
@@ -37,4 +63,13 @@
     background-color: #495057;
     border-radius: 5px;
     padding: 5px;
+}
+
+/* Content area styling */
+.content-area {
+    flex-grow: 1;
+    margin-left: 200px; /* Add margin to avoid overlap with the fixed vertical navbar */
+    padding: 10px;
+    background-color: #f8f9fa;
+    overflow-y: auto; /* Allow scrolling if content overflows */
 }

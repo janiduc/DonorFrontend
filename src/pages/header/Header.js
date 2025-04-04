@@ -22,7 +22,8 @@ const Header = () => {
     };
 
     return (
-        <>
+        <div className="main-container">
+            {/* Top Horizontal Navbar */}
             <Navbar bg={navbarBg} variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
@@ -49,7 +50,23 @@ const Header = () => {
                     </Nav>
                 </Container>
             </Navbar>
-        </>
+
+            {/* Left Vertical Navbar */}
+            {token && (
+                <div className="vertical-navbar">
+                    <Nav className="flex-column">
+                        <Nav.Link as={Link} to="/profile" className="nav-link">Profile</Nav.Link>
+                        <Nav.Link as={Link} to="/donorManagement" className="nav-link">Donor Management</Nav.Link>
+                        <Nav.Link as={Link} to="/childManagement" className="nav-link">Child Management</Nav.Link>
+                        <Nav.Link as={Link} to="/elderManagement" className="nav-link">Elder Management</Nav.Link>
+                        <Nav.Link as={Link} to="/donations" className="nav-link">Donations</Nav.Link>
+                        <Nav.Link as={Link} to="/sponserships" className="nav-link">Sponsorships</Nav.Link>
+                        <Nav.Link as={Link} to="/comunications" className="nav-link">Communications</Nav.Link>
+                        <Nav.Link as={Link} to="/aboutUs" className="nav-link">About Us</Nav.Link>
+                    </Nav>
+                </div>
+            )}
+        </div>
     );
 };
 
